@@ -1,2 +1,5 @@
-package ui.account;public class LogoutTest {
+package ui.account;
+
+public class LogoutTest {
+
 }

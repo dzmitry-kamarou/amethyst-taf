@@ -1,2 +1,5 @@
-package ui.account;public class RegisterTest {
+package ui.account;
+
+public class RegisterTest {
+
 }
