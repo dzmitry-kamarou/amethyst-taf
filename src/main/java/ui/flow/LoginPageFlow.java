@@ -20,4 +20,8 @@ public class LoginPageFlow {
   public String grabErrorText() {
     return loginPage.errorLabelText();
   }
+
+  public String grabTitleText() {
+    return loginPage.titleText();
+  }
 }

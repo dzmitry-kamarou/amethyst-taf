@@ -5,7 +5,7 @@ import ui.Browser;
 
 public class LoginPage {
 
-  private String titleXpath = "//input[@id='email']";
+  private String titleXpath = "//h1[@id='title']";
   private String errorLabelXpath = "//span[@id='error']";
   private String emailFieldXpath = "//input[@id='email']";
   private String passwordFieldXpath = "//input[@id='password']";
@@ -29,7 +29,7 @@ public class LoginPage {
     return Browser.getWebDriver().findElement(By.xpath(errorLabelXpath)).getText();
   }
 
-  public boolean isVisible() {
-    return Browser.getWebDriver().findElement(By.xpath(titleXpath)).isDisplayed();
+  public String titleText() {
+    return Browser.getWebDriver().findElement(By.xpath(titleXpath)).getText();
   }
 }
