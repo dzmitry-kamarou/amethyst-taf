@@ -15,6 +15,9 @@ public interface BusinessConfig extends Config {
   @Key("registered.account.firstname")
   String registeredAccountFirstName();
 
+  @Key("registered.account.lastname")
+  String registeredAccountLastName();
+
   @Key("registered.account.email")
   String registeredAccountEmail();
 

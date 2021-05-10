@@ -5,11 +5,11 @@ import ui.Browser;
 
 public class DashboardPage {
 
-  private final String titleXpath = "//h1[text()='Dashboard']";
+  private final String logoutLinkXpath = "//a[@id='logout']";
   private final String greetingXpath = "//p[starts-with(text(),'Welcome ')]";
 
-  public boolean isVisible() {
-    return Browser.getWebDriver().findElement(By.xpath(titleXpath)).isDisplayed();
+  public void clickLogOutLink() {
+    Browser.getWebDriver().findElement(By.xpath(logoutLinkXpath)).click();
   }
 
   public String greetingText() {

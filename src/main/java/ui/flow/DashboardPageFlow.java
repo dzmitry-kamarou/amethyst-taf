@@ -10,6 +10,11 @@ public class DashboardPageFlow {
     dashboardPage = new DashboardPage();
   }
 
+  public LoginPageFlow logOut() {
+    dashboardPage.clickLogOutLink();
+    return new LoginPageFlow();
+  }
+
   public String grabGreeting() {
     return dashboardPage.greetingText();
   }

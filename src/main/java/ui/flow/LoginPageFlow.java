@@ -12,12 +12,16 @@ public class LoginPageFlow {
   }
 
   public void login(Account account) {
-    loginPage.enterEmail(account.getEmail());
-    loginPage.enterPassword(account.getPassword());
+    loginPage.fillEmailField(account.getEmail());
+    loginPage.fillPasswordField(account.getPassword());
     loginPage.clickLoginButton();
   }
 
-  public String grabErrorText() {
-    return loginPage.errorLabelText();
+  public String grabMessageText() {
+    return loginPage.messageLabelText();
+  }
+
+  public String grabTitleText() {
+    return loginPage.titleHeadingText();
   }
 }
