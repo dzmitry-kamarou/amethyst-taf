@@ -12,10 +12,11 @@ import ui.Browser;
 import ui.flow.DashboardPageFlow;
 import ui.flow.WelcomePageFlow;
 
+@Test(suiteName = "Logout suite", groups = {"smoke", "regression"})
 public class LogoutTest {
 
   @BeforeMethod(description = "Load application")
-  public void setUp() {
+  public void loadApplication() {
     Browser.Up();
     Browser.loadApp();
   }
@@ -30,7 +31,7 @@ public class LogoutTest {
   }
 
   @AfterMethod(description = "Close application")
-  public void tearDown() {
+  public void closeApplication() {
     Browser.down();
   }
 }

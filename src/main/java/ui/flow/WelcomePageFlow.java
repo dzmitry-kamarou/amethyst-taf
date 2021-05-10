@@ -14,4 +14,9 @@ public class WelcomePageFlow {
     welcomePage.clickLoginLink();
     return new LoginPageFlow();
   }
+
+  public RegistrationPageFlow registration() {
+    welcomePage.clickRegistrationLink();
+    return new RegistrationPageFlow();
+  }
 }

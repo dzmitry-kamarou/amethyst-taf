@@ -11,6 +11,7 @@ public class AccountFactory {
     Account account = new Account();
     Faker faker = new Faker();
     account.setFirstName(faker.name().firstName());
+    account.setLastName(faker.name().lastName());
     account.setEmail(faker.internet().emailAddress());
     account.setPassword(faker.internet().password());
     return account;
@@ -19,6 +20,7 @@ public class AccountFactory {
   public static Account registeredAccount() {
     Account account = new Account();
     account.setFirstName(CONFIG.registeredAccountFirstName());
+    account.setLastName(CONFIG.registeredAccountLastName());
     account.setEmail(CONFIG.registeredAccountEmail());
     account.setPassword(CONFIG.registeredAccountPassword());
     return account;

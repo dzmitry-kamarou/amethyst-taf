@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="[${env}] [${scope}] amethyst suite" parallel="classes">
-  <!--  <parameter name="Environment" value="${env}"/>-->
+<suite name="[${env}] [${scope}] amethyst suite">
+  <parameter name="Environment" value="${env}"/>
   <test name="[${env}] [${scope}] amethyst test">
     <groups>
       <run>
-        <include name="${scope}"/>
+        <include name="smoke"/>
         <exclude name="deprecated"/>
       </run>
     </groups>

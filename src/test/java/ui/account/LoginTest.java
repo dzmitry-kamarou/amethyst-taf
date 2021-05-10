@@ -14,11 +14,11 @@ import ui.flow.DashboardPageFlow;
 import ui.flow.LoginPageFlow;
 import ui.flow.WelcomePageFlow;
 
-@Test(suiteName = "Login suite", groups = {"smoke", "regression", "account"})
+@Test(suiteName = "Login suite", groups = {"smoke", "regression"})
 public class LoginTest {
 
   @BeforeMethod(description = "Load application")
-  public void setUp() {
+  public void loadApplication() {
     Browser.Up();
     Browser.loadApp();
   }
@@ -29,15 +29,15 @@ public class LoginTest {
     new WelcomePageFlow().login().login(account);
     assertThat(String.format("Account '%s' has been registered", account.getEmail()),
         new DashboardPageFlow().grabGreeting(),
-        equalTo("Welcome " + account.getFirstName()));
+        equalTo(String.format("Welcome %s %s", account.getFirstName(), account.getLastName())));
   }
 
   @Test(testName = "Not registered account can not log in")
-  public void notRegisteredAccountCannotLogIn() {
+  public void notRegisteredAccountCanNotLogIn() {
     Account account = AccountFactory.randomAccount();
     new WelcomePageFlow().login().login(account);
     assertThat("Account '%s' has not been registered",
-        new LoginPageFlow().grabErrorText(),
+        new LoginPageFlow().grabMessageText(),
         is("that email is not registered"));
   }
 
@@ -47,12 +47,12 @@ public class LoginTest {
     account.setPassword(String.format("wrong%s", account.getPassword()));
     new WelcomePageFlow().login().login(account);
     assertThat("Account '%s' entered wrong password",
-        new LoginPageFlow().grabErrorText(),
+        new LoginPageFlow().grabMessageText(),
         is("password incorrect"));
   }
 
   @AfterMethod(description = "Close application")
-  public void tearDown() {
+  public void closeApplication() {
     Browser.down();
   }
 }
