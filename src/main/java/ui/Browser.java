@@ -30,7 +30,7 @@ public class Browser {
   public static WebDriver getWebDriver() {
     System.setProperty("webdriver.chrome.driver", System.getenv("chromedriver"));
     ChromeOptions chromeOptions = new ChromeOptions();
-    chromeOptions.addArguments("headless");
+    chromeOptions.setBinary("chromebinary");
     if (driver == null) {
       driver = new ChromeDriver(chromeOptions);
     }
