@@ -27,6 +27,7 @@ public class Browser {
   }
 
   public static WebDriver getWebDriver() {
+    System.setProperty("webdriver.chrome.driver", System.getenv("chromedriver"));
     if (driver == null) {
       driver = new ChromeDriver();
     }
