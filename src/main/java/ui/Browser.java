@@ -2,6 +2,7 @@ package ui;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Browser {
 
@@ -27,8 +28,11 @@ public class Browser {
   }
 
   public static WebDriver getWebDriver() {
+    System.setProperty("webdriver.chrome.driver", System.getenv("chromedriver"));
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.setBinary(System.getenv("chromebinary"));
     if (driver == null) {
-      driver = new ChromeDriver();
+      driver = new ChromeDriver(chromeOptions);
     }
     return driver;
   }
