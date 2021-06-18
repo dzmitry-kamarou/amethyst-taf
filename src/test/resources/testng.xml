@@ -13,6 +13,6 @@
     </packages>
   </test>
   <listeners>
-    <!--    <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>-->
+    <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
   </listeners>
 </suite>
